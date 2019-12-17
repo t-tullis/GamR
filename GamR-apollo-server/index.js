@@ -1,22 +1,11 @@
 const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express')
 
+const typeDefs = require("./api/Types")
+const resolvers = require("./api/Resolvers")
+
 const app = express()
 const port = process.env.PORT || 5000
-
-//Creates type definitions 
-const typeDefs = gql`
-    type Query {
-        hello: String
-    }
-`
-//Creates Resolvers 
-//You can think of resolvers as controllers
-const resolvers = {
-    Query: {
-        hello: () => 'Hello World!'
-    }
-}
 
 //Creates Apollo Server
 const server = new ApolloServer({typeDefs, resolvers})
