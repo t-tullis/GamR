@@ -5,7 +5,7 @@ const typeDefs = require("./api/Types")
 const resolvers = require("./api/Resolvers")
 
 const app = express()
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 4500
 
 //Creates Apollo Server
 const server = new ApolloServer({typeDefs, resolvers})
