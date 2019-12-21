@@ -34,11 +34,7 @@ module.exports = {
 	updatePost: (args) => {
 		const { _id, post } = args
 
-		PostModel.update(
-			{ _id },
-			{
-				$set: { post }
-			},
+		PostModel.update({ _id },{$set: { post }},
 			{ upsert: true },
 			error => {
 				if (error) {
